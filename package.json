@@ -1,7 +1,7 @@
 {
   "name": "@ep/buffer",
   "description": "Node.js Buffer API, for the browser",
-  "version": "6.0.3",
+  "version": "6.0.4",
   "author": {
     "name": "Feross Aboukhadijeh",
     "email": "feross@feross.org",
@@ -30,7 +30,9 @@
     "standard": "*",
     "tape": "^5.0.1",
     "through2": "^4.0.2",
-    "uglify-js": "^3.11.5"
+    "uglify-js": "^3.11.5",
+    "webpack": "^5.68.0",
+    "webpack-cli": "^4.9.2"
   },
   "homepage": "https://github.com/feross/buffer",
   "jspm": {
@@ -67,7 +69,8 @@
     "test-browser-new-local": "airtap --local -- test/*.js test/node/*.js",
     "test-node": "tape test/*.js test/node/*.js",
     "update-authors": "./bin/update-authors.sh",
-    "release": "npm publish dist/"
+    "build": "webpack",
+    "release": "npm run build && npm publish dist/"
   },
   "standard": {
     "ignore": [
